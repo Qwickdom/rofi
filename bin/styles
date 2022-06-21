@@ -31,7 +31,7 @@ change_rofi() {
 }
 
 change_vim() {
-  sed -i "108s/.*/colorscheme $trm/" "$DIR"/.vimrc
+  sed -i "109s/.*/colorscheme $trm/" "$DIR"/.vimrc
 }
 
 if  [[ "$1" = "--ganyu" ]]; then
