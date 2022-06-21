@@ -3,7 +3,7 @@
  # Rofi
  
  These scripts are part of my [dotfiles-bspwm](https://github.com/Qwickdom/dotfiles-bspwm) <br>
- You can modify theme to make it work for you, <br>
+ You can modify them to make it work for you, <br>
  but don't forget to give me **credits** ಠωಠ
 
  | Windows         | MPD            |
