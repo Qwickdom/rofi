@@ -22,7 +22,7 @@ change_feh() {
 }
 
 change_gtk() {
-  sed -i "2s/=.*/=$gtk2/" "$DIR"/.gtkrc-2.0
+  sed -i "5s/=.*/=$gtk2/" "$DIR"/.gtkrc-2.0
   sed -i "2s/=.*/=$gtk3/" "$DIRG"/settings.ini
 }
 
