@@ -7,6 +7,6 @@ rofi_command="rofi -theme $dirt/styles.rasi"
 chosen="$($rofi_command -no-config -no-lazy-grab -sep "|" \
  -dmenu -i -p "Choose a style" <<< "Ganyu|HSGrl")"
 case $chosen in
-  *Ganyu) "$dirb"/styles --ganyu ;;
-  *HSGrl) "$dirb"/styles --hsgrl ;;
+  *Ganyu) "$dirb"/styles.sh --ganyu ;;
+  *HSGrl) "$dirb"/styles.sh --hsgrl ;;
 esac

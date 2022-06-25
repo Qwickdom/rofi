@@ -19,7 +19,7 @@ case $chosen in
     $app 'https://www.youtube.com/?persist_gl=2&gl=JP' &
     ;;
   $search)
-    ans=$($HOME/.config/bspwm/rofi/bin/search)
+    ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
     $app 'https://www.youtube.com/results?search_query='${ans// /+}'&persist_gl=2&gl=JP' &
     ;;
 esac

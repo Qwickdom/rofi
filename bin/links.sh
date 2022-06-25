@@ -29,16 +29,16 @@ if (ping -c 1 archlinux.org || ping -c 1 google.com || ping -c 1 github.com || p
         $app 'https://www.archlinux.org' &
         ;;
       $github)
-        $dirb/git
+        $dirb/git.sh
         ;;
       $search)
-        $dirb/duckgoo
+        $dirb/duckgoo.sh
         ;;
       $mail)
         $app 'https://www.gmail.com' &
         ;;
       $youtube)
-        $dirb/yt
+        $dirb/yt.sh
         ;;
     esac
   fi

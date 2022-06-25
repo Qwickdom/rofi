@@ -49,7 +49,7 @@ case $chosen in
     $app $URL &
     ;;
   $search)
-    ans=$($HOME/.config/bspwm/rofi/bin/search)
+    ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
     $app 'https://www.github.com/'${ans// /+} &
     ;;
   $clone)

@@ -74,7 +74,6 @@ mainbox {
 
 element {
     background-color:                @background;
-    font:           "JetBrainsMono Nerd Font 14";
     text-color:                      @foreground;
     orientation:                      horizontal;
     border:                                  2px;
@@ -95,7 +94,7 @@ element-icon {
 element-text {
     background-color:                    inherit;
     text-color:                          inherit;
-    font:           "JetBrainsMono Nerd Font 14";
+    font:                           "Feather 14";
     expand:                                 true;
     horizontal-align:                        0.5;
     vertical-align:                          0.5;

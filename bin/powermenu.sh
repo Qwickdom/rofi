@@ -18,7 +18,7 @@ _msg=" Options - yes/y/no/n"
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
 case $chosen in
   $shutdown)
-    ans=$($HOME/.config/bspwm/rofi/bin/confirm)
+    ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
       systemctl poweroff
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
@@ -28,7 +28,7 @@ case $chosen in
     fi
     ;;
   $reboot)
-    ans=$($HOME/.config/bspwm/rofi/bin/confirm)
+    ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
       systemctl reboot
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
@@ -41,9 +41,8 @@ case $chosen in
     betterlockscreen -l --off 5
     ;;
   $suspend)
-    ans=$($HOME/.config/bspwm/rofi/bin/confirm)
+    ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-      pactl set-sink-mute 0 toggle
       betterlockscreen --suspend
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
       exit
@@ -52,7 +51,7 @@ case $chosen in
     fi
     ;;
   $logout)
-    ans=$($HOME/.config/bspwm/rofi/bin/confirm)
+    ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
       bspc quit
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
