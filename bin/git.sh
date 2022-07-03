@@ -50,7 +50,11 @@ case $chosen in
     ;;
   $search)
     ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
-    $app 'https://www.github.com/'${ans// /+} &
+      if [[ "$ans" == "" ]]; then
+        rofi -theme $dir/askpass.rasi -e "   Nothing to search"
+      else
+        $app 'https://www.github.com/search?q='${ans// /+} &
+      fi
     ;;
   $clone)
     main

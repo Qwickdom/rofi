@@ -18,14 +18,26 @@ chosen="$(echo -e "$options" | $rofi_command -p "Duckduckgo | URL | Google" -dme
 case $chosen in
   $duck)
     ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
-    $app 'https://duckduckgo.com/?q='${ans// /+}'&ia=web' &
+      if [[ "$ans" == "" ]]; then
+        rofi -theme $dir/askpass.rasi -e "   Nothing to search"
+      else
+        $app 'https://duckduckgo.com/?q='${ans// /+}'&ia=web' &
+      fi
     ;;
   $search)
     ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
-    $app $ans &
+      if [[ "$ans" == "" ]]; then
+        rofi -theme $dir/askpass.rasi -e "   Nothing to search"
+      else
+        $app $ans &
+      fi
     ;;
   $google)
     ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
-    $app 'https://www.google.com/search?q='${ans// /+}'&oq='${ans// /+} &
+      if [[ "$ans" == "" ]]; then
+        rofi -theme $dir/askpass.rasi -e "   Nothing to search"
+      else
+        $app 'https://www.google.com/search?q='${ans// /+}'&oq='${ans// /+} &
+      fi
     ;;
 esac

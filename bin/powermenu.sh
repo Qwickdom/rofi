@@ -53,7 +53,7 @@ case $chosen in
   $logout)
     ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-      bspc quit
+      kill -9 -1
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
       exit
     else

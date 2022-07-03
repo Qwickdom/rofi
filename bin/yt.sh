@@ -20,6 +20,10 @@ case $chosen in
     ;;
   $search)
     ans=$($HOME/.config/bspwm/rofi/bin/search.sh)
-    $app 'https://www.youtube.com/results?search_query='${ans// /+}'&persist_gl=2&gl=JP' &
+      if [[ "$ans" == "" ]]; then
+        rofi -theme $dir/askpass.rasi -e "   Nothing to search"
+      else
+        $app 'https://www.youtube.com/results?search_query='${ans// /+}'&persist_gl=2&gl=JP' &
+      fi
     ;;
 esac
