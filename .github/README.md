@@ -7,7 +7,7 @@
  but don't forget to give me **credits** ಠωಠ
 
  | Windows            | MPD              |
- | ------------------ | ---------------- |
+ |        :---:       |        :---:     |
  | ![Window](https://raw.githubusercontent.com/Qwickdom/rofi/main/.github/assets/Windows.png)     | ![MPD](https://raw.githubusercontent.com/Qwickdom/rofi/main/.github/assets/MPD.png)      |
  | Screenshot         | Style-switch     |
  | ![Screenshot](https://raw.githubusercontent.com/Qwickdom/rofi/main/.github/assets/Screenshot.png) | ![Style-s](https://raw.githubusercontent.com/Qwickdom/rofi/main/.github/assets/Style-switch.png)  |
@@ -20,7 +20,7 @@
 
  **The style switcher will change the following:** <br>
  Bar, wallpaper, gtk, vim, rofi, dunst and alacritty colors <br>
- ( Ganyu = *Tokyo Night* | HSGrl = *Dracula* | MFuji = *Nord*)
+ ( Ganyu = *Tokyo Night* | HSGrl = *Dracula* | MFuji = *Nord* )
 
  <details align="center">
  <summary><strong>Extra Shots</strong></summary><br>
