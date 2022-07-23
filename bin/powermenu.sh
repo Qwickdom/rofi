@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$HOME/.config/bspwm"
+dirb="$HOME/.config/bspwm/bin"
 rofi_command="rofi -theme $dir/rofi/themes/powermenu.rasi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
@@ -20,6 +21,7 @@ case $chosen in
   $shutdown)
     ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+      sed -i "12s/=.*/=off/" "$dirb"/brightness.sh
       systemctl poweroff
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
       exit
@@ -30,6 +32,7 @@ case $chosen in
   $reboot)
     ans=$($HOME/.config/bspwm/rofi/bin/confirm.sh)
     if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+      sed -i "12s/=.*/=off/" "$dirb"/brightness.sh
       systemctl reboot
     elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
       exit

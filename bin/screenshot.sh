@@ -4,12 +4,18 @@ dir="$HOME/.config/bspwm/rofi"
 rofi_command="rofi -theme $dir/themes/screenshot.rasi"
 time=`date +%Y-%m-%d-%S`
 geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-shot="$HOME/Pictures"
+shot="$HOME/Pictures/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 # Error msg
 msg() {
     rofi -theme "$dir/themes/message.rasi" -e "Please install 'scrot' first"
+}
+
+create_dir() {
+  if [ ! -d $shot ]; then
+    mkdir $shot
+  fi
 }
 
 # notify and view screenshot
@@ -45,6 +51,7 @@ case $chosen in
   $screen)
     if [[ -f /usr/bin/scrot ]]; then
       scrot "$file"
+      create_dir
       mv *.png "$shot"
       cd "$shot" | xclip -selection clipboard "$file"
       notify_view
@@ -55,6 +62,7 @@ case $chosen in
   $area)
     if [[ -f /usr/bin/scrot ]]; then
       scrot -s "$file"
+      create_dir
       mv *.png $shot
       cd "$shot" | xclip -selection clipboard "$file"
       notify_view
@@ -65,6 +73,7 @@ case $chosen in
   $window)
     if [[ -f /usr/bin/scrot ]]; then
       scrot -u "$file"
+      create_dir
       mv *.png $shot
       cd "$shot" | xclip -selection clipboard "$file"
       notify_view
@@ -77,6 +86,7 @@ case $chosen in
     if [[ $ans > 0 ]] || [[ -f /usr/bin/scrot ]]; then
       countdown "$ans"
       scrot "$file"
+      create_dir
       mv *.png $shot
       cd "$shot" | xclip -selection clipboard "$file"
       notify_view
